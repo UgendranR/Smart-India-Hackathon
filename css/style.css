@@ -389,5 +389,10 @@ padding: 10px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 15px;
+    margin-right: 25px;
 
+}
+
+.data form{
+    display: inline;
 }
