@@ -13,7 +13,7 @@
     animation: glowing 1300ms infinite;
     border: white solid 1px;
 }
-@keyframes glowing {
+@keyframes glowing{
     0% {
       background-color: #2ba805;
       box-shadow: 0 0 5px #2ba805;
