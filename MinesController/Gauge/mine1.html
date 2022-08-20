@@ -1,0 +1,37 @@
+x<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="dist/gauge.js"></script>
+</head> 
+
+<body>
+    <div id="preview-textfield">1000</div>
+    <canvas id="demo"></canvas>
+    <div id="preview-textfield">1000</div>
+    <canvas id="demo"></canvas>
+</body>
+<script>
+    var opts = {
+    
+};
+var target = document.getElementById('demo'); 
+var gauge = new Gauge(target).setOptions(opts);
+document.getElementById("preview-textfield").className = "preview-textfield";
+gauge.setTextField(document.getElementById("preview-textfield"));
+gauge.maxValue = 300;
+gauge.setMinValue(0); 
+
+var inverval_timer;
+
+//Time in milliseconds [1 second = 1000 milliseconds ]    
+inverval_timer = setInterval(function() { 
+    var i =Math.floor(Math.random() * 101);
+    gauge.set(i);
+    console.log(i);
+}, 2000);
+   
+
+</script>
+
+</html>
