@@ -5,6 +5,7 @@
 <head>
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script src="../Gauge/dist/gauge.js"></script>
     <meta charset="utf-8">
@@ -43,13 +44,7 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+    
     <!-- Spinner End -->
 
 
@@ -108,15 +103,43 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-4 s1">
+            <div class="col-sm-4  s1">
+                 
                 <div id="preview-textfield">0</div>
                 <canvas id="demo"></canvas>
                 <h2>Methane</h2>
             </div>
-            <div class="col-md-4 s2">
+          
+            <div class="col-sm-4 s2">
+                 
                 <div id="preview-textfield1">0</div>
                 <canvas id="demo1"></canvas>
+                <h2>Carbon dioxide</h2>
+           
+            </div>
+            <div class="col-sm-4 s3">
+                 
+                <div id="preview-textfield2">0</div>
+                <canvas id="demo2"></canvas>
+                <h2>Temperature</h2>
+          
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4  s1">
+                 
+                <div id="preview-textfield">0</div>
+                <canvas id="demo"></canvas>
                 <h2>Methane</h2>
+            </div>
+          
+            <div class="col-sm-4 s2">
+                 
+                <div id="preview-textfield1">0</div>
+                <canvas id="demo1"></canvas>
+                <h2>Carbon dioxide</h2>
+           
             </div>
 
         </div>
@@ -214,6 +237,12 @@
 <!-- Template Javascript -->
 <script src="/js/main.js"></script>
 <script>
+
+    //Dummy call to Initialize
+    
+
+
+    //s1
     var opts = {
         lineWidth: .2,
         pointer:{
@@ -233,6 +262,7 @@
   ],
   
     };
+    //s2
     var opts1 = {
         lineWidth: .2,
         pointer:{
@@ -241,6 +271,63 @@
         },
         colorStart: '#6FADCF',   // Colors
         colorStop: '#8FC0DA',
+        staticZones: [
+        {strokeStyle: "red", min: 700, max: 1000,  },
+    {strokeStyle: "green", min: 0, max: 700,  },
+
+    
+    
+    
+    
+  ],
+  
+    };
+    //s3
+    var opts2 = {
+        lineWidth: .2,
+        pointer:{
+            color:'#FFFFFF',
+            length: 0.56,
+        },
+        
+        staticZones: [
+        {strokeStyle: "red", min: 700, max: 1000,  },
+    {strokeStyle: "green", min: 0, max: 700,  },
+
+    
+    
+    
+    
+  ],
+  
+    };
+    //s4
+    var opts2 = {
+        lineWidth: .2,
+        pointer:{
+            color:'#FFFFFF',
+            length: 0.56,
+        },
+        
+        staticZones: [
+        {strokeStyle: "red", min: 700, max: 1000,  },
+    {strokeStyle: "green", min: 0, max: 700,  },
+
+    
+    
+    
+    
+  ],
+  
+    };
+    //s5
+    var opts2 = {
+        lineWidth: .2,
+        pointer:{
+            color:'#FFFFFF',
+            length: 0.56,
+        },
+        
         staticZones: [
         {strokeStyle: "red", min: 700, max: 1000,  },
     {strokeStyle: "green", min: 0, max: 700,  },
@@ -264,10 +351,13 @@
 
     //Time in milliseconds [1 second = 1000 milliseconds ]    
     inverval_timer = setInterval(function () {
-        var i = Math.floor(Math.random() * 101);
-        var j = Math.floor(Math.random() * 101);
-        gauge.set(i);
-        gauge1.set(j);
+        var s1 = Math.floor(Math.random() * 101);
+        var s2 = Math.floor(Math.random() * 101);
+        var s3 = Math.floor(Math.random() * 101);
+        gauge.set(s1);
+        gauge1.set(s2);
+        gauge2.set(s2);
+        gauge3.set(s3);
         console.log(i);
     }, 2000);
 
@@ -278,9 +368,37 @@
     gauge1.setTextField(document.getElementById("preview-textfield1"));
     gauge1.maxValue = 1000;
     gauge1.setMinValue(0);
+    //s3
+    var targe2 = document.getElementById('demo2');
+    var gauge2 = new Gauge(target2).setOptions(opts2);
+    document.getElementById("preview-textfield2").className = "preview-textfield2";
+    gauge2.setTextField(document.getElementById("preview-textfield2"));
+    gauge2.maxValue = 1000;
+    gauge2.setMinValue(0);
+
+    //s4
+    var target3 = document.getElementById('demo3');
+    var gauge3 = new Gauge(target3).setOptions(opts3);
+    document.getElementById("preview-textfield3").className = "preview-textfield3";
+    gauge3.setTextField(document.getElementById("preview-textfield3"));
+    gauge3.maxValue = 1000;
+    gauge3.setMinValue(0);
+
+    //s5
+
+    var target2 = document.getElementById('demo2');
+    var gauge2 = new Gauge(target2).setOptions(opts2);
+    document.getElementById("preview-textfield2").className = "preview-textfield2";
+    gauge2.setTextField(document.getElementById("preview-textfield2"));
+    gauge2.maxValue = 1000;
+    gauge2.setMinValue(0);
 
 
 
+
+gauge.set(0);
+gauge1.set(1);
+gauge2.set(0);
 
 </script>
 </body>

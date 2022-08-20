@@ -1,4 +1,4 @@
-.container .s1,.container .s2{
+.container .s1,.container .s2,.container .s3{
     text-align: center;
     border: 1px solid rgb(69, 62, 62);
 }
@@ -6,9 +6,8 @@
 .container .preview-textfield{
     color: wheat;
 }
-.col-md-4{
-    margin-right: 20px;
-
+.row{
+    margin-bottom: 10px;
 }
 .col-md-4:hover{
     background-color: rgb(33, 32, 32);
