@@ -101,34 +101,34 @@
     <!-- Service Start -->
  
 
-<div>
+
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                  
         <h2 class="text-uppercase">Dashboard of Birbhum Mine</h2>
     </div>
     <div class="buttonclass">
         <div class="button1">
-            <button onclick="window.location.href='Birbhum_Areas/Area1.html';">Area-1</button>
+            <button id="a1" onclick="window.location.href='Birbhum_Areas/Area1.html'; ">Area-1</button>
         </div>
         <div class="button2">
-            <div class="button1">
+           
                 <button onclick="">Area-2</button>
-            </div>
+           
         </div>
         <div class="button3">
-            <div class="button1">
+            
                 <button onclick="">Area-3</button>
-            </div>
+            
         </div>
         <div class="button4">
-            <div class="button1">
+            
                 <button onclick="">Area-4</button>
-            </div>
+           
         </div>
         <div class="button5">
-            <div class="button1">
+           
                 <button onclick="">Area-5</button>
-            </div>
+            
         </div>
     </div>
     <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1146824.3458186358!2d87.25793324370734!3d23.31664602888037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sbirbhum%20mine!5e1!3m2!1sen!2sin!4v1660996698995!5m2!1sen!2sin" width="97%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
@@ -220,5 +220,33 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
 </body>
-
+<script>
+    
+ var audio = new Audio('audio_file.mp3');
+    var inverval_timer;
+    //Time in milliseconds [1 second = 1000 milliseconds ]    
+    inverval_timer = setInterval(function () {
+        var s1 = Math.floor(Math.random() * 1000);
+       
+       if(s1>500){
+        var b=document.getElementsByClassName("button1")[0].className = 'redglow';
+       
+        audio.play();
+        stop1();
+       }
+       
+       
+       
+      
+       
+     
+    }, 2000);
+    function stop1(){
+    
+    setTimeout(function() {
+        var b=document.getElementsByClassName("redglow")[0].className = 'button1';
+       audio.stop();
+}, 10000);
+}
+</script>
 </html>

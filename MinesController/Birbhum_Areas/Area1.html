@@ -127,18 +127,18 @@
 
         </div>
         <div class="row">
-            <div class="col-sm-4  s1">
+            <div class="col-sm-4  s4">
                  
-                <div id="preview-textfield">0</div>
-                <canvas id="demo"></canvas>
-                <h2>Methane</h2>
+                <div id="preview-textfield3">0</div>
+                <canvas id="demo3"></canvas>
+                <h2>Humidity</h2>
             </div>
           
-            <div class="col-sm-4 s2">
+            <div class="col-sm-4 s5">
                  
-                <div id="preview-textfield1">0</div>
-                <canvas id="demo1"></canvas>
-                <h2>Carbon dioxide</h2>
+                <div id="preview-textfield4">0</div>
+                <canvas id="demo4"></canvas>
+                <h2>Carbon Monoxide</h2>
            
             </div>
 
@@ -241,7 +241,24 @@
     //Dummy call to Initialize
     
 
-
+    var inverval_timer;
+    //Time in milliseconds [1 second = 1000 milliseconds ]    
+    inverval_timer = setInterval(function () {
+        var s1 = Math.floor(Math.random() * 101);
+        var s2 = Math.floor(Math.random() * 104);
+        var s3 = Math.floor(Math.random() * 104);
+        var s4 = Math.floor(Math.random() * 104);
+        var s5 = Math.floor(Math.random() * 850);
+        if(s5>700){
+            danger();
+        }
+        gauge.set(s1);
+        gauge1.set(s2);
+        gauge2.set(s3);
+        gauge3.set(s4);
+        gauge4.set(s5);
+     
+    }, 2000);
     //s1
     var opts = {
         lineWidth: .2,
@@ -302,7 +319,7 @@
   
     };
     //s4
-    var opts2 = {
+    var opts3 = {
         lineWidth: .2,
         pointer:{
             color:'#FFFFFF',
@@ -321,7 +338,7 @@
   
     };
     //s5
-    var opts2 = {
+    var opts4 = {
         lineWidth: .2,
         pointer:{
             color:'#FFFFFF',
@@ -339,27 +356,13 @@
   ],
   
     };
-    
+    //s1
     var target = document.getElementById('demo');
     var gauge = new Gauge(target).setOptions(opts);
     document.getElementById("preview-textfield").className = "preview-textfield";
     gauge.setTextField(document.getElementById("preview-textfield"));
     gauge.maxValue = 1000;
     gauge.setMinValue(0);
-
-    var inverval_timer;
-
-    //Time in milliseconds [1 second = 1000 milliseconds ]    
-    inverval_timer = setInterval(function () {
-        var s1 = Math.floor(Math.random() * 101);
-        var s2 = Math.floor(Math.random() * 101);
-        var s3 = Math.floor(Math.random() * 101);
-        gauge.set(s1);
-        gauge1.set(s2);
-        gauge2.set(s2);
-        gauge3.set(s3);
-        console.log(i);
-    }, 2000);
 
     //s2
     var target1 = document.getElementById('demo1');
@@ -369,7 +372,7 @@
     gauge1.maxValue = 1000;
     gauge1.setMinValue(0);
     //s3
-    var targe2 = document.getElementById('demo2');
+    var target2 = document.getElementById('demo2');
     var gauge2 = new Gauge(target2).setOptions(opts2);
     document.getElementById("preview-textfield2").className = "preview-textfield2";
     gauge2.setTextField(document.getElementById("preview-textfield2"));
@@ -386,20 +389,28 @@
 
     //s5
 
-    var target2 = document.getElementById('demo2');
-    var gauge2 = new Gauge(target2).setOptions(opts2);
-    document.getElementById("preview-textfield2").className = "preview-textfield2";
-    gauge2.setTextField(document.getElementById("preview-textfield2"));
-    gauge2.maxValue = 1000;
-    gauge2.setMinValue(0);
-
+    var target4 = document.getElementById('demo4');
+    var gauge4 = new Gauge(target4).setOptions(opts4);
+    document.getElementById("preview-textfield4").className = "preview-textfield4";
+    gauge4.setTextField(document.getElementById("preview-textfield4"));
+    gauge4.maxValue = 1000;
+    gauge4.setMinValue(0);
+//DAnger fn
+function danger(){
+    document.getElementsByClassName("s5")[0].style.backgroundColor="#CB0000";
+    setTimeout(function() {
+        document.getElementsByClassName("s5")[0].style.backgroundColor="black";
+}, 5000);
+}
 
 
 
 gauge.set(0);
-gauge1.set(1);
+gauge1.set(0);
 gauge2.set(0);
-
+gauge3.set(0);
+gauge4.set(701);
+danger();
 </script>
 </body>
 
