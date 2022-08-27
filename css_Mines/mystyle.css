@@ -1,3 +1,9 @@
 body a{
 	text-decoration:none;
 }
+.panel{
+	border:none !important;
+}
+.container p{
+	color:white !important;
+}

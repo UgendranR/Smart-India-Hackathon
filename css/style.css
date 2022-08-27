@@ -23,7 +23,9 @@
     bottom: 45px;
     z-index: 99;
 }
-
+.pannel a:hover,.panel a:focus{
+    text-decoration: none !important;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -396,3 +398,23 @@ padding: 10px;
 .data form{
     display: inline;
 }
+
+
+.container p{
+	color:white !important;
+}
+
+
+.t1{
+    margin-left: 200px;
+}
+.t2{
+    margin-right:175px;
+}
+
+.r1,.r2{
+   margin-bottom:70px;}
+
+   .move-up{
+    margin-top:-30px;
+   }

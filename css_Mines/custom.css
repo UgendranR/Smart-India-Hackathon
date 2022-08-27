@@ -1,3 +1,6 @@
 .container p ,.nagpur p{
 	color:#428bca !important;
 }
+.panel{
+	border: 1px solid transparent;
+}

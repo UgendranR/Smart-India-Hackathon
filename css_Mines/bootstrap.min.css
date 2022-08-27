@@ -6,26 +6,18 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
-.panel-body{
-    background-color: #D9D9D9;
-}
-.panel-default:hover,.panel-default:focus{
-    margin-left: -10px;
-    margin-top: -10px;
-    height: 450px;
-    width:370px;
-    background-color: white;
-}
 
-.panel-body:hover,.panel-body:focus{
-    background-color: white;
-}
 
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box
 }
+.container p{
+    Color: #428bca !important;
+    
+}
+
 
 :before,
 :after {
@@ -1639,30 +1631,7 @@ output {
     color: #555
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
-}
 
-.form-control:focus {
-    border-color: #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
-}
 
 .form-control::-moz-placeholder {
     color: #999;
@@ -2017,13 +1986,6 @@ select[multiple].input-lg {
     user-select: none
 }
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus {
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px
-}
 
 .btn:hover,
 .btn:focus {
@@ -2096,21 +2058,9 @@ fieldset[disabled] .btn-default.active {
     background-color: #333
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #428bca;
-    border-color: #357ebd
-}
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #3276b1;
-    border-color: #285e8e
-}
+
+
 
 .btn-primary:active,
 .btn-primary.active,
@@ -5496,6 +5446,14 @@ button.close {
     top: 0;
     width: 100%
 }
+.pannel, .panel-default{
+    border: none;
+}
+
+.container p{
+    text-decoration: none;
+    color:white;
+}
 
 .carousel-inner>.next {
     left: 100%
@@ -5850,4 +5808,46 @@ button.close {
     .hidden-print {
         display: none !important
     }
+}
+
+.panel-body{
+    background-color: #D9D9D9;
+   
+}
+.panel-default:hover,.panel-default:focus{
+    background-color: #245269 !important;
+    margin-left: -10px;
+    margin-top: -10px;
+    height: 450px;
+    width:370px;
+    
+    
+     
+}
+
+.panel-body:hover p,.panel-body:focus p{
+
+     text-decoration: none;
+     
+}
+.panel-default:hover p,.panel-default:focus p{
+   
+    text-decoration: none;
+}
+
+.panel a:hover,.panel a:focus{
+    text-decoration: none !important;
+}
+
+.panel:hover ,.panel:focus{
+    background-color: white !important;
+    
+}
+
+.panel-default:hover,.panel-default:focus{
+    background-color: white !important;
+}
+
+.mt-2{
+    margin-top: 0.5rem !important;
 }
